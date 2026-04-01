@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial 7: Integrating External Libraries</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Tutorial 7: Integrating External Libraries</h1>
+        </header>
+
+        <!-- Loading Status Section -->
+        <section class="status-section">
+            <h2>Data Loading Status</h2>
+            <div id="loading-status" class="status-display">
+                <p class="status-message">Ready to load data</p>
+            </div>
+            <button id="load-data-button" class="load-button">Load Restaurant Data</button>
+        </section>
+        
+        <!-- Method 1: forEach with loaded data -->
+        <section class="method-section">
+            <h2>Leaflet JS Map</h2>            
+            <div class="demo-area">
+                <button id="display-button" class="method-button" disabled>Display All Restaurants</button>
+                <div id="restaurant-list" class="result-area">
+                    <p class="placeholder">Load data first, then click to display all restaurants</p>
+                    <div id="map"></div>
+                </div>
+            </div>
+            
+            <div class="explanation">
+                <p>Data from json then displayed on the map using Leaflet.js</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+</body>
+</html>
