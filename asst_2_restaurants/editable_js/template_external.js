@@ -16,7 +16,8 @@ function showTable(data) {
         const mapElement = document.getElementById('map');
         if (!mapElement) return;
 
-        var map = L.map('map').setView([39.0458, -76.6413], 8);
+        var map = L.map('map').setView([38.934, -76.8966], 10);
+        var bounds = new L.LatLngBounds();
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
@@ -30,8 +31,11 @@ function showTable(data) {
 
             const [lng, lat] = coordinate;
 
-            L.marker([lat, lng]).addTo(map).bindPopup(`<strong>${name}</strong><br>${address}`);
+            const marker = L.marker([lat, lng]).addTo(map).bindPopup(`<strong>${name}</strong><br>${address}`);
+            //https://stackoverflow.com/questions/38155534/zoom-to-fit-all-markers-on-leafletjs-map hard to tell if it works.
+            bounds.extend(marker.getLatLng());
         });
+        map.fitBounds(bounds);
     }, 0);
 
         /*html*/
