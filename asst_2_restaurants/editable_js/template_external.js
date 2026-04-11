@@ -16,7 +16,7 @@ function showTable(data) {
         const mapElement = document.getElementById('map');
         if (!mapElement) return;
 
-        var map = L.map('map').setView([38.9, -77.04], 13);
+        var map = L.map('map').setView([39.0458, -76.6413], 8);
 
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
